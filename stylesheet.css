@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: auto;
     animation: fadeIn 2s ease-in-out;
-    filter: brightness(30%) contrast(150%) saturate(200%);
+    filter: brightness(70%) contrast(150%) saturate(200%); /* 明るさを調整 */
 }
 
 .hero-overlay {
@@ -31,7 +31,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5); /* 背景の暗さを調整 */
 }
 
 .hero-text h1 {
@@ -44,8 +44,8 @@ body {
 .hero-text p {
     font-size: 1.2rem;
     margin: 10px 0 0 0;
-    color: #fff; /* テキストの色を白に変更 */
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; /* 赤い影を削除 */
+    color: #fff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -75,12 +75,12 @@ body {
 
 .skills .skill {
     display: inline-block;
-    background-color: #0ff; /* スキルタグの背景色を青に変更 */
+    background-color: #0ff;
     color: white;
     padding: 5px 10px;
     margin: 5px;
     border-radius: 5px;
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; /* 赤い影を削除 */
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -173,4 +173,3 @@ body {
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
 }
-
