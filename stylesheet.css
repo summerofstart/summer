@@ -39,14 +39,13 @@ body {
     margin: 0;
     color: #0ff;
     text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-    animation: slideInFromTop 1s ease-in-out;
 }
 
 .hero-text p {
     font-size: 1.2rem;
     margin: 10px 0 0 0;
-    color: #f0f;
-    text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f;
+    color: #fff; /* テキストの色を白に変更 */
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; /* 赤い影を削除 */
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -76,12 +75,12 @@ body {
 
 .skills .skill {
     display: inline-block;
-    background-color: #f0f;
+    background-color: #0ff; /* スキルタグの背景色を青に変更 */
     color: white;
     padding: 5px 10px;
     margin: 5px;
     border-radius: 5px;
-    text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; /* 赤い影を削除 */
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -93,6 +92,16 @@ body {
     position: absolute;
     bottom: 0;
     animation: floatUp 5s infinite ease-in-out;
+}
+
+/* 星のスタイル */
+.star {
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    animation: twinkling 5s infinite ease-in-out;
 }
 
 /* 音量バーのスタイル */
@@ -157,5 +166,11 @@ body {
 
 @keyframes volumeBarAnimation {
     0%, 100% { height: 20px; }
-    50% { height: 100px; }
+    50% { height: 50px; }
 }
+
+@keyframes twinkling {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
