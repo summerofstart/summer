@@ -1,8 +1,9 @@
 /* 基本スタイル */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
 }
 
 .hero {
@@ -16,7 +17,7 @@ body {
     width: 100%;
     height: auto;
     animation: fadeIn 2s ease-in-out;
-    filter: brightness(70%);
+    filter: brightness(30%) contrast(150%) saturate(200%);
 }
 
 .hero-overlay {
@@ -29,20 +30,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .hero-text h1 {
     font-size: 2.5rem;
     margin: 0;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
     animation: slideInFromTop 1s ease-in-out;
 }
 
 .hero-text p {
     font-size: 1.2rem;
     margin: 10px 0 0 0;
+    color: #f0f;
+    text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -66,16 +70,18 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    border: 3px solid #0ff;
     animation: bounceIn 1s ease-in-out;
 }
 
 .skills .skill {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #f0f;
     color: white;
     padding: 5px 10px;
     margin: 5px;
     border-radius: 5px;
+    text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f;
     animation: fadeIn 2s ease-in-out;
 }
 
