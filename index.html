@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer's Futuristic Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a1f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .profile-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(33,33,66,0.7) 0%, rgba(66,33,99,0.7) 100%);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(102, 204, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(102, 204, 255, 0.1) 2px,
+                rgba(102, 204, 255, 0.1) 4px
+            );
+            animation: grid-animation 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes grid-animation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        h1 {
+            color: #66ccff;
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(102, 204, 255, 0.7);
+        }
+
+        .profile-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            flex: 0 0 250px;
+            height: 250px;
+            background: linear-gradient(45deg, #66ccff, #ff66cc);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            box-shadow: 0 0 20px rgba(102, 204, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image::after {
+            content: '🤖';
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background-color: rgba(102, 204, 255, 0.2);
+            color: #66ccff;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill:hover {
+            background-color: rgba(102, 204, 255, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 204, 255, 0.3);
+        }
+
+        .minecraft-block {
+            width: 50px;
+            height: 50px;
+            background-color: #43b581;
+            position: absolute;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(1000px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Summer's Cyber Realm</h1>
+        <div class="profile-content">
+            <div class="profile-text">
+                <p>未来のアーキテクト、Summerがお届けする デジタル × バーチャルの融合空間へようこそ。</p>
+                <p>GPT-2を駆使して AI彼女 を創造し、現実とデジタルの境界を探求。同時に、Minecraftの世界で建築の革新を追求するリーダーとして活動中。</p>
+                <p>テクノロジーと創造性が交差する地点で、新たな可能性を開拓しています。</p>
+                <div class="skills">
+                    <span class="skill">AI開発</span>
+                    <span class="skill">GPT-2 マスター</span>
+                    <span class="skill">Minecraft建築</span>
+                    <span class="skill">バーチャル設計</span>
+                    <span class="skill">未来予測</span>
+                </div>
+            </div>
+            <div class="profile-image"></div>
+        </div>
+    </div>
+
+    <script>
+        function createMinecraftBlocks() {
+            const container = document.querySelector('.profile-container');
+            const blockCount = 5;
+
+            for (let i = 0; i < blockCount; i++) {
+                const block = document.createElement('div');
+                block.classList.add('minecraft-block');
+                block.style.left = `${Math.random() * 100}%`;
+                block.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(block);
+            }
+        }
+
+        createMinecraftBlocks();
+    </script>
+</body>
+</html>
