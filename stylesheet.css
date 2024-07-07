@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: auto;
     animation: fadeIn 2s ease-in-out;
-    filter: brightness(70%) contrast(150%) saturate(200%); /* 明るさを調整 */
+    filter: brightness(70%) contrast(150%) saturate(500%); /* 明るさを調整 */
 }
 
 .hero-overlay {
