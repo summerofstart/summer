@@ -13,8 +13,8 @@
         <div class="hero-overlay">
             <img src="2024-05-11_15.13.56.png" alt="サイバーヒーローのイメージ画像">
             <div class="hero-text">
-                <h1>Welcome to Summer's profile</h1>
-                <p>Summerの世界へようこそ</p>
+                <h1 id="typing-title"></h1>
+                <p>未来のアーキテクト、Summerの世界へようこそ</p>
             </div>
         </div>
     </header>
@@ -47,20 +47,39 @@
     </footer>
 
     <script>
-        function createMinecraftBlocks() {
-            const container = document.querySelector('.profile-container');
-            const blockCount = 5;
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleElement = document.getElementById('typing-title');
+            const titleText = "Welcome to Summer's Cyber Realm";
+            let index = 0;
 
-            for (let i = 0; i < blockCount; i++) {
-                const block = document.createElement('div');
-                block.classList.add('minecraft-block');
-                block.style.left = `${Math.random() * 100}%`;
-                block.style.animationDelay = `${Math.random() * 5}s`;
-                container.appendChild(block);
+            function typeTitle() {
+                if (index < titleText.length) {
+                    titleElement.innerHTML += titleText.charAt(index);
+                    index++;
+                    setTimeout(typeTitle, 100);
+                }
             }
-        }
 
-        document.addEventListener('DOMContentLoaded', createMinecraftBlocks);
+            typeTitle();
+
+            createMinecraftBlocks();
+
+            function createStars() {
+                const hero = document.querySelector('.hero');
+                const starCount = 100;
+
+                for (let i = 0; i < starCount; i++) {
+                    const star = document.createElement('div');
+                    star.classList.add('star');
+                    star.style.left = `${Math.random() * 100}%`;
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.animationDelay = `${Math.random() * 10}s`;
+                    hero.appendChild(star);
+                }
+            }
+
+            createStars();
+        });
     </script>
 </body>
 </html>
