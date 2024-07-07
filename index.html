@@ -46,6 +46,10 @@
         <div class="volume-bar"></div>
     </footer>
 
+    <audio id="audioPlayer" src="サマーはお兄ちゃんになりたいの!.mp3"></audio>
+    <button id="playButton">再生</button>
+
+    <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const titleElement = document.getElementById('typing-title');
@@ -61,8 +65,6 @@
             }
 
             typeTitle();
-
-            createMinecraftBlocks();
 
             function createStars() {
                 const hero = document.querySelector('.hero');
