@@ -5,9 +5,44 @@ body {
     background-color: #f0f0f0;
 }
 
+.hero {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
 .hero img {
     width: 100%;
     height: auto;
+    animation: fadeIn 2s ease-in-out;
+    filter: brightness(70%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    animation: slideInFromTop 1s ease-in-out;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -44,13 +79,6 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* フッターのアニメーション */
-.footer img {
-    width: 100%;
-    height: auto;
-    animation: fadeInUp 2s ease-in-out;
-}
-
 /* マインクラフトブロックのスタイル */
 .minecraft-block {
     width: 50px;
@@ -72,14 +100,14 @@ body {
     to { transform: translateX(0); }
 }
 
+@keyframes slideInFromTop {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
 @keyframes bounceIn {
     from { transform: scale(0); }
     to { transform: scale(1); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatUp {
