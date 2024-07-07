@@ -9,6 +9,12 @@ body, html {
     overflow-x: hidden;
 }
 
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .profile-container {
     max-width: 1000px;
     margin: 50px auto;
@@ -75,26 +81,17 @@ p {
 .profile-image {
     flex: 0 0 250px;
     height: 250px;
-    background: linear-gradient(45deg, #66ccff, #ff66cc);
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 100px;
-    box-shadow: 0 0 20px rgba(102, 204, 255, 0.5);
     position: relative;
-    overflow: hidden;
 }
 
-.profile-image::after {
-    content: '🤖';
-    position: absolute;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+.profile-image img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 20px rgba(102, 204, 255, 0.5);
 }
 
 .skills {
@@ -133,4 +130,11 @@ p {
     10% { opacity: 1; }
     90% { opacity: 1; }
     100% { transform: translateY(1000px) rotate(360deg); opacity: 0; }
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 50px;
 }
