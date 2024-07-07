@@ -1,140 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-body, html {
+/* 基本スタイル */
+body {
     margin: 0;
-    padding: 0;
-    font-family: 'Orbitron', sans-serif;
-    background-color: #0a0a1f;
-    color: #ffffff;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
 .hero img {
     width: 100%;
     height: auto;
-    display: block;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .profile-container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 40px;
-    background: linear-gradient(135deg, rgba(33,33,66,0.7) 0%, rgba(66,33,99,0.7) 100%);
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(102, 204, 255, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.profile-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(102, 204, 255, 0.1) 2px,
-        rgba(102, 204, 255, 0.1) 4px
-    );
-    animation: grid-animation 20s linear infinite;
-    z-index: -1;
-}
-
-@keyframes grid-animation {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-50%);
-    }
-}
-
-h1 {
-    color: #66ccff;
     text-align: center;
-    font-size: 3em;
-    margin-bottom: 30px;
-    text-shadow: 0 0 10px rgba(102, 204, 255, 0.7);
+    padding: 50px 20px;
 }
 
 .profile-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
 .profile-text {
-    flex: 1;
-    padding-right: 40px;
-}
-
-p {
-    font-size: 1.1em;
-    line-height: 1.6;
     margin-bottom: 20px;
-}
-
-.profile-image {
-    flex: 0 0 250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    animation: slideInFromLeft 1s ease-in-out;
 }
 
 .profile-image img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 20px rgba(102, 204, 255, 0.5);
+    animation: bounceIn 1s ease-in-out;
 }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.skill {
-    background-color: rgba(102, 204, 255, 0.2);
-    color: #66ccff;
-    padding: 10px 20px;
+.skills .skill {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
     margin: 5px;
-    border-radius: 20px;
-    font-size: 1em;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    border-radius: 5px;
+    animation: fadeIn 2s ease-in-out;
 }
 
-.skill:hover {
-    background-color: rgba(102, 204, 255, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(102, 204, 255, 0.3);
-}
-
-.minecraft-block {
-    width: 50px;
-    height: 50px;
-    background-color: #43b581;
-    position: absolute;
-    animation: fall 10s linear infinite;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(1000px) rotate(360deg); opacity: 0; }
-}
-
+/* フッターのアニメーション */
 .footer img {
     width: 100%;
     height: auto;
-    display: block;
-    margin-top: 50px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* マインクラフトブロックのスタイル */
+.minecraft-block {
+    width: 50px;
+    height: 50px;
+    background-color: #8B4513;
+    position: absolute;
+    bottom: 0;
+    animation: floatUp 5s infinite ease-in-out;
+}
+
+/* アニメーション定義 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes bounceIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
