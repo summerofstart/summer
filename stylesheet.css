@@ -169,3 +169,18 @@ h1 {
     from, to { border-color: transparent }
     50% { border-color: #00ff00 }
 }
+
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .profile-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-overlay img {
+        max-height: 40vh;
+    }
+}
