@@ -39,13 +39,18 @@ body {
     margin-top: 20px;
 }
 
-h1 {
+h1, h2 {
     font-size: 3em;
     margin-bottom: 10px;
     text-shadow: 0 0 10px #00ff00;
 }
 
-.profile-container {
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.profile-container, .minecraft-build {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
@@ -88,32 +93,18 @@ h1 {
     font-size: 0.9em;
 }
 
-.volume-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+.minecraft-build img {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
+    max-height: 400px;
+    object-fit: cover;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+    margin-bottom: 20px;
 }
 
-.volume-bar {
-    width: 3px;
-    height: 20px;
-    background-color: #00ff00;
-    margin: 0 2px;
-    animation: sound 0ms -800ms linear infinite alternate;
-}
-
-@keyframes sound {
-    0% {
-        height: 3px;
-    }
-    100% {
-        height: 20px;
-    }
+.minecraft-build p {
+    text-align: center;
+    font-style: italic;
 }
 
 .star {
@@ -132,24 +123,6 @@ h1 {
     50% {
         opacity: 1;
     }
-}
-
-#playButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #00ff00;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-}
-
-#playButton:hover {
-    background-color: #00cc00;
 }
 
 #typing-title {
@@ -182,5 +155,9 @@ h1 {
 
     .hero-overlay img {
         max-height: 40vh;
+    }
+
+    .minecraft-build img {
+        max-height: 300px;
     }
 }
