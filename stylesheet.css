@@ -1,165 +1,49 @@
-/* 基本スタイル */
-body {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #0d0d0d;
-    color: #e0e0e0;
-}
-
-.hero {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-    animation: fadeIn 2s ease-in-out;
-    filter: brightness(70%) contrast(150%) saturate(200%);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    color: #0ff;
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin: 10px 0 0 0;
-    color: #fff;
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-    animation: fadeIn 2s ease-in-out;
-}
-
-#playButton {
-    background-color: #0ff;
-    color: #000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.profile-container {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.profile-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-text {
-    margin-bottom: 20px;
-    animation: slideInFromLeft 1s ease-in-out;
-}
-
-.profile-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #0ff;
-    animation: bounceIn 1s ease-in-out;
-}
-
-.skills .skill {
-    display: inline-block;
-    background-color: #0ff;
-    color: white;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 5px;
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* 星のスタイル */
-.star {
-    width: 3px;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    border-radius: 50%;
-    animation: twinkling 5s infinite ease-in-out;
-}
-
-/* 音量バーのスタイル */
-.volume-footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100px;
-    background-color: #111;
-    padding: 20px;
-}
-
-.volume-bar {
-    width: 10px;
-    height: 50px;
-    margin: 0 5px;
-    background-color: #0ff;
-    animation: volumeBarAnimation 1s infinite ease-in-out;
-}
-
-.volume-bar:nth-child(2) {
-    animation-delay: 0.1s;
-}
-
-.volume-bar:nth-child(3) {
-    animation-delay: 0.2s;
-}
-
-.volume-bar:nth-child(4) {
-    animation-delay: 0.3s;
-}
-
-.volume-bar:nth-child(5) {
-    animation-delay: 0.4s;
-}
-
-/* アニメーション定義 */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInFromLeft {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
-}
-
-@keyframes bounceIn {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
-}
-
-@keyframes volumeBarAnimation {
-    0%, 100% { height: 20px; }
-    50% { height: 50px; }
-}
-
-@keyframes twinkling {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Summerのファンタジー風プロフィールページ。魔法とMinecraft建築について紹介。">
+    <meta name="keywords" content="魔法, Minecraft, 建築, ファンタジー, プロフィール">
+    <title>Summer's Magical Realm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1 id="typing-title"></h1>
+                <p>Summerの魔法世界へようこそ</p>
+            </div>
+        </div>
+    </header>
+    <div class="profile-container">
+        <h1>魔法の同志募集中</h1>
+        <div class="profile-content">
+            <div class="profile-text">
+                <p>Summerがお届けする 魔術師×建築家のプロフィール</p>
+                <p>現実と幻想の境界を探求。同時に、Minecraftサーバーで建築班リーダーとして活動中。</p>
+                <p>魔法の世界に工学の叡智を。想像力で現実を変える。</p>
+                <div class="skills">
+                    <span class="skill">魔法開発</span>
+                    <span class="skill">錬金術でAI創造</span>
+                    <span class="skill">Minecraft建築</span>
+                </div>
+            </div>
+            <div class="profile-image">
+                <img src="/api/placeholder/300/300" alt="ファンタジー風プロフィールアイコン">
+            </div>
+        </div>
+    </div>
+    <footer class="magic-footer">
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
+    </footer>
+    <audio id="audioPlayer" src="魔法の森のメロディ.mp3"></audio>
+    <button id="playButton">音楽を奏でる</button>
+    <script src="script.js"></script>
+</body>
+</html>
