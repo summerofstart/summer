@@ -3,85 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Summerのプロフィールページ。AI開発やMinecraft建築について紹介。">
-    <meta name="keywords" content="AI, AI開発, GPT-2, Minecraft, 建築, サイバー, プロフィール">
-    <title>Summer's Futuristic Profile</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="description" content="Summerのファンタジー風プロフィールページ。魔法とMinecraft建築について紹介。">
+    <meta name="keywords" content="魔法, Minecraft, 建築, ファンタジー, プロフィール">
+    <title>Summer's Magical Realm</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="hero">
         <div class="hero-overlay">
-            <img src="2024-05-11_15.13.56.png" alt="サイバーヒーローのイメージ画像">
             <div class="hero-text">
                 <h1 id="typing-title"></h1>
-                <p>Summerの世界へようこそ</p>
+                <p>Summerの魔法世界へようこそ</p>
             </div>
         </div>
     </header>
-
     <div class="profile-container">
-        <h1> 彼女募集　</h1>
+        <h1>魔法の同志募集中</h1>
         <div class="profile-content">
             <div class="profile-text">
-                <p>Summerがお届けする バカ×天才プロフィール</p>
-                <p>現実とデジタルの境界を探求。同時に、Minecraftサーバーで建築班リーダーとして活動中。</p>
-                <p>工業は女子がいない！！ならAIで彼女つくろかｗ</p>
+                <p>Summerがお届けする 魔術師×建築家のプロフィール</p>
+                <p>現実と幻想の境界を探求。同時に、Minecraftサーバーで建築班リーダーとして活動中。</p>
+                <p>魔法の世界に工学の叡智を。想像力で現実を変える。</p>
                 <div class="skills">
-                    <span class="skill">AI開発</span>
-                    <span class="skill">GPT-2でAI彼女作成</span>
+                    <span class="skill">魔法開発</span>
+                    <span class="skill">錬金術でAI創造</span>
                     <span class="skill">Minecraft建築</span>
                 </div>
             </div>
             <div class="profile-image">
-                <img src="2024-05-16_15.27.23.png" alt="プロフィールアイコンの画像">
+                <img src="/api/placeholder/300/300" alt="ファンタジー風プロフィールアイコン">
             </div>
         </div>
     </div>
-
-    <footer class="volume-footer">
-        <div class="volume-bar"></div>
-        <div class="volume-bar"></div>
-        <div class="volume-bar"></div>
-        <div class="volume-bar"></div>
-        <div class="volume-bar"></div>
+    <footer class="magic-footer">
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
+        <div class="magic-orb"></div>
     </footer>
-
-    <audio id="audioPlayer" src="サマーはお兄ちゃんになりたいの!.mp3"></audio>
-    <button id="playButton">再生</button>
-
+    <audio id="audioPlayer" src="魔法の森のメロディ.mp3"></audio>
+    <button id="playButton">音楽を奏でる</button>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const titleElement = document.getElementById('typing-title');
-            const titleText = "Welcome to Summer's Cyber Realm";
-            let index = 0;
-
-            function typeTitle() {
-                if (index < titleText.length) {
-                    titleElement.innerHTML += titleText.charAt(index);
-                    index++;
-                    setTimeout(typeTitle, 100);
-                }
-            }
-
-            typeTitle();
-
-            function createStars() {
-                const hero = document.querySelector('.hero');
-                const starCount = 100;
-
-                for (let i = 0; i < starCount; i++) {
-                    const star = document.createElement('div');
-                    star.classList.add('star');
-                    star.style.left = `${Math.random() * 100}%`;
-                    star.style.top = `${Math.random() * 100}%`;
-                    star.style.animationDelay = `${Math.random() * 10}s`;
-                    hero.appendChild(star);
-                }
-            }
-
-            createStars();
-        });
-    </script>
 </body>
 </html>
