@@ -3,47 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Summerのファンタジー風プロフィールページ。魔法とMinecraft建築について紹介。">
-    <meta name="keywords" content="魔法, Minecraft, 建築, ファンタジー, プロフィール">
-    <title>Summer's Magical Realm</title>
+    <title>財務データ表示</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-overlay">
-            <div class="hero-text">
-                <h1 id="typing-title"></h1>
-                <p>Summerの魔法世界へようこそ</p>
-            </div>
+    <div class="container">
+        <header>
+            <h1>企業財務情報ダッシュボード</h1>
+        </header>
+        <div class="input-section">
+            <input type="text" id="companyInput" placeholder="会社コードを入力" aria-label="会社コード入力">
+            <button onclick="addCompany()">追加</button>
         </div>
-    </header>
-    <div class="profile-container">
-        <h1>魔法の同志募集中</h1>
-        <div class="profile-content">
-            <div class="profile-text">
-                <p>Summerがお届けする 魔術師×建築家のプロフィール</p>
-                <p>現実と幻想の境界を探求。同時に、Minecraftサーバーで建築班リーダーとして活動中。</p>
-                <p>魔法の世界に工学の叡智を。想像力で現実を変える。</p>
-                <div class="skills">
-                    <span class="skill">魔法開発</span>
-                    <span class="skill">錬金術でAI創造</span>
-                    <span class="skill">Minecraft建築</span>
-                </div>
-            </div>
-            <div class="profile-image">
-                <img src="/api/placeholder/300/300" alt="ファンタジー風プロフィールアイコン">
-            </div>
+        <div id="companyList" class="company-list"></div>
+        <div class="tabs">
+            <button class="tab" onclick="showTab('financialInfo')">財務情報</button>
+            <button class="tab" onclick="showTab('historicalCharts')">歴史的データ</button>
         </div>
+        <div id="financialInfo" class="tab-content"></div>
+        <div id="historicalCharts" class="tab-content"></div>
     </div>
-    <footer class="magic-footer">
-        <div class="magic-orb"></div>
-        <div class="magic-orb"></div>
-        <div class="magic-orb"></div>
-        <div class="magic-orb"></div>
-        <div class="magic-orb"></div>
-    </footer>
-    <audio id="audioPlayer" src="魔法の森のメロディ.mp3"></audio>
-    <button id="playButton">音楽を奏でる</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
