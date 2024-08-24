@@ -1,242 +1,161 @@
-:root {
-    --primary-color: #C44134; /* Updated primary color */
-    --secondary-color: #E0DFDF; /* Updated secondary color */
-    --background-color: #fefae0;
-    --text-color: #C44134; /* Updated text color */
-    --card-background: #faedcd;
-    --header-color: #a98467;
-    --accent-color: #e9edc9;
-    --border-color: #d6ccc2;
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: all 0.3s ease;
-}
-
-header {
-    background-color: var(--header-color);
-    color: var(--background-color);
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    animation: fadeInDown 0.8s ease;
 }
 
 .container {
+    width: 90%;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
-    background-color: var(--card-background);
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    animation: fadeIn 1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.input-group {
-    display: flex;
-    gap: 10px;
+header {
+    text-align: center;
     margin-bottom: 20px;
 }
 
-input, button {
-    padding: 12px;
-    font-size: 16px;
-    border: none;
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-input {
-    flex-grow: 1;
-    border: 1px solid var(--border-color);
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-input:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--primary-color);
+    margin-right: 10px;
+    font-size: 1em;
 }
 
 button {
-    background-color: var(--primary-color); /* Updated primary color */
-    color: var(--background-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #C44134;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    font-size: 1em;
 }
 
 button:hover {
-    background-color: #b63c30; /* Adjusted hover state for contrast */
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: translateY(0);
+    background-color: #a63c2a;
 }
 
 .company-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .company-tag {
-    background-color: var(--secondary-color); /* Updated secondary color */
-    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    background-color: #C44134;
+    color: white;
     padding: 8px 15px;
     border-radius: 20px;
-    font-size: 14px;
-    animation: scaleIn 0.3s ease;
+    margin: 5px;
+    font-size: 0.9em;
 }
 
 .remove-btn {
-    margin-left: 5px;
-    color: var(--text-color);
     cursor: pointer;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 .tabs {
     display: flex;
+    justify-content: center;
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--border-color);
 }
 
 .tab {
-    padding: 10px 20px;
-    background-color: transparent;
-    border: none;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #E0DFDF;
+    color: #333;
     cursor: pointer;
-    transition: all 0.3s ease;
-    color: var(--text-color);
-    position: relative;
+    font-size: 1em;
+    margin: 0 5px;
+    transition: background-color 0.3s;
 }
 
 .tab.active {
-    color: var(--primary-color); /* Updated primary color */
+    background-color: #C44134;
+    color: white;
 }
 
-.tab.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary-color); /* Updated primary color */
-    animation: slideIn 0.3s ease;
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
 }
 
 .financial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .financial-card {
-    background-color: var(--accent-color);
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    margin: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.5s ease;
-}
-
-.financial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    flex: 1 1 calc(50% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .financial-card h2 {
-    color: var(--primary-color); /* Updated primary color */
     margin-top: 0;
-    border-bottom: 2px solid var(--secondary-color); /* Updated secondary color */
-    padding-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
 }
 
 th, td {
-    padding: 12px;
+    padding: 10px;
     text-align: left;
-    border-bottom: 1px solid var(--border-color);
 }
 
 th {
-    background-color: var(--card-background);
-    font-weight: 600;
+    background-color: #f4f4f4;
 }
 
 .chart-container {
-    margin-top: 30px;
-    background-color: var(--accent-color);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin: 20px 0;
 }
 
-@media (max-width: 768px) {
-    .input-group {
-        flex-direction: column;
-    }
-    .financial-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-    from { 
-        opacity: 0; 
-        transform: translateY(-20px);
-    }
-    to { 
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px);
-    }
-    to { 
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes scaleIn {
-    from { 
-        opacity: 0; 
-        transform: scale(0.8);
-    }
-    to { 
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes slideIn {
-    from { width: 0; }
-    to { width: 100%; }
+canvas {
+    width: 100% !important;
+    height: 400px !important;
 }
